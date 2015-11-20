@@ -1,209 +1,102 @@
-
 # JavaScript编码规范
 
-
-
-
-[1 前言](#user-content-1-前言)
-
-[2 代码风格](#user-content-2-代码风格)
-
-　　[2.1 文件](#user-content-21-文件)
-
-　　[2.2 结构](#user-content-22-结构)
-
-　　　　[2.2.1 缩进](#user-content-221-缩进)
-
-　　　　[2.2.2 空格](#user-content-222-空格)
-
-　　　　[2.2.3 换行](#user-content-223-换行)
-
-　　　　[2.2.4 语句](#user-content-224-语句)
-
-　　[2.3 命名](#user-content-23-命名)
-
-　　[2.4 注释](#user-content-24-注释)
-
-　　　　[2.4.1 单行注释](#user-content-241-单行注释)
-
-　　　　[2.4.2 多行注释](#user-content-242-多行注释)
-
-　　　　[2.4.3 文档化注释](#user-content-243-文档化注释)
-
-　　　　[2.4.4 类型定义](#user-content-244-类型定义)
-
-　　　　[2.4.5 文件注释](#user-content-245-文件注释)
-
-　　　　[2.4.6 命名空间注释](#user-content-246-命名空间注释)
-
-　　　　[2.4.7 类注释](#user-content-247-类注释)
-
-　　　　[2.4.8 函数/方法注释](#user-content-248-函数/方法注释)
-
-　　　　[2.4.9 事件注释](#user-content-249-事件注释)
-
-　　　　[2.4.10 常量注释](#user-content-2410-常量注释)
-
-　　　　[2.4.11 复杂类型注释](#user-content-2411-复杂类型注释)
-
-　　　　[2.4.12 AMD 模块注释](#user-content-2412-amd-模块注释)
-
-　　　　[2.4.13 细节注释](#user-content-2413-细节注释)
-
-[3 语言特性](#user-content-3-语言特性)
-
-　　[3.1 变量](#user-content-31-变量)
-
-　　[3.2 条件](#user-content-32-条件)
-
-　　[3.3 循环](#user-content-33-循环)
-
-　　[3.4 类型](#user-content-34-类型)
-
-　　　　[3.4.1 类型检测](#user-content-341-类型检测)
-
-　　　　[3.4.2 类型转换](#user-content-342-类型转换)
-
-　　[3.5 字符串](#user-content-35-字符串)
-
-　　[3.6 对象](#user-content-36-对象)
-
-　　[3.7 数组](#user-content-37-数组)
-
-　　[3.8 函数](#user-content-38-函数)
-
-　　　　[3.8.1 函数长度](#user-content-381-函数长度)
-
-　　　　[3.8.2 参数设计](#user-content-382-参数设计)
-
-　　　　[3.8.3 闭包](#user-content-383-闭包)
-
-　　　　[3.8.4 空函数](#user-content-384-空函数)
-
-　　[3.9 面向对象](#user-content-39-面向对象)
-
-　　[3.10 动态特性](#user-content-310-动态特性)
-
-　　　　[3.10.1 eval](#user-content-3101-eval)
-
-　　　　[3.10.2 动态执行代码](#user-content-3102-动态执行代码)
-
-　　　　[3.10.3 with](#user-content-3103-with)
-
-　　　　[3.10.4 delete](#user-content-3104-delete)
-
-　　　　[3.10.5 对象属性](#user-content-3105-对象属性)
-
-[4 浏览器环境](#user-content-4-浏览器环境)
-
-　　[4.1 模块化](#user-content-41-模块化)
-
-　　　　[4.1.1 AMD](#user-content-411-amd)
-
-　　　　[4.1.2 define](#user-content-412-define)
-
-　　　　[4.1.3 require](#user-content-413-require)
-
-　　[4.2 DOM](#42-dom)
-
-　　　　[4.2.1 元素获取](#user-content-421-元素获取)
-
-　　　　[4.2.2 样式获取](#user-content-422-样式获取)
-
-　　　　[4.2.3 样式设置](#user-content-423-样式设置)
-
-　　　　[4.2.4 DOM 操作](#user-content-424-dom-操作)
-
-　　　　[4.2.5 DOM 事件](#user-content-425-dom-事件)
-
-
-
-
+* [1 前言](#user-content-1-前言)
+* [2 代码风格](#user-content-2-代码风格)
+    * [2.1 文件编码](#user-content-21-文件编码)
+    * [2.2 结构](#user-content-22-结构)
+        * [2.2.1 缩进](#user-content-221-缩进)
+        * [2.2.2 空格](#user-content-222-空格)
+        * [2.2.3 换行](#user-content-223-换行)
+        * [2.2.4 语句](#user-content-224-语句)
+    * [2.3 命名](#user-content-23-命名)
+    * [2.4 注释](#user-content-24-注释)
+        * [2.4.1 单行注释](#user-content-241-单行注释)
+        * [2.4.2 多行注释](#user-content-242-多行注释)
+        * [2.4.3 文档化注释](#user-content-243-文档化注释)
+        * [2.4.4 类型定义](#user-content-244-类型定义)
+        * [2.4.5 文件注释](#user-content-245-文件注释)
+        * [2.4.6 命名空间注释](#user-content-246-命名空间注释)
+        * [2.4.7 类注释](#user-content-247-类注释)
+        * [2.4.8 函数/方法注释](#user-content-248-函数/方法注释)
+        * [2.4.9 事件注释](#user-content-249-事件注释)
+        * [2.4.10 常量注释](#user-content-2410-常量注释)
+        * [2.4.11 复杂类型注释](#user-content-2411-复杂类型注释)
+        * [2.4.12 AMD 模块注释](#user-content-2412-amd-模块注释)
+        * [2.4.13 细节注释](#user-content-2413-细节注释)
+* [3 语言特性](#user-content-3-语言特性)
+    * [3.1 变量](#user-content-31-变量)
+    * [3.2 条件](#user-content-32-条件)
+    * [3.3 循环](#user-content-33-循环)
+    * [3.4 类型](#user-content-34-类型)
+        * [3.4.1 类型检测](#user-content-341-类型检测)
+        * [3.4.2 类型转换](#user-content-342-类型转换)
+    * [3.5 字符串](#user-content-35-字符串)
+    * [3.6 对象](#user-content-36-对象)
+    * [3.7 数组](#user-content-37-数组)
+    * [3.8 函数](#user-content-38-函数)
+        * [3.8.1 函数长度](#user-content-381-函数长度)
+        * [3.8.2 参数设计](#user-content-382-参数设计)
+        * [3.8.3 闭包](#user-content-383-闭包)
+        * [3.8.4 空函数](#user-content-384-空函数)
+    * [3.9 面向对象](#user-content-39-面向对象)
+    * [3.10 动态特性](#user-content-310-动态特性)
+        * [3.10.1 eval](#user-content-3101-eval)
+        * [3.10.2 动态执行代码](#user-content-3102-动态执行代码)
+        * [3.10.3 with](#user-content-3103-with)
+        * [3.10.4 delete](#user-content-3104-delete)
+        * [3.10.5 对象属性](#user-content-3105-对象属性)
+* [4 浏览器环境](#user-content-4-浏览器环境)
+    * [4.1 模块化](#user-content-41-模块化)
+        * [4.1.1 AMD](#user-content-411-amd)
+        * [4.1.2 define](#user-content-412-define)
+        * [4.1.3 require](#user-content-413-require)
+    * [4.2 DOM](#42-dom)
+        * [4.2.1 元素获取](#user-content-421-元素获取)
+        * [4.2.2 样式获取](#user-content-422-样式获取)
+        * [4.2.3 样式设置](#user-content-423-样式设置)
+        * [4.2.4 DOM 操作](#user-content-424-dom-操作)
+        * [4.2.5 DOM 事件](#user-content-425-dom-事件)
 
 ## 1 前言
-
-
-JavaScript在百度一直有着广泛的应用，特别是在浏览器端的行为管理。本文档的目标是使JavaScript代码风格保持一致，容易被理解和被维护。
+本文档的目标是使JavaScript代码风格保持一致，容易被理解和被维护。
 
 虽然本文档是针对JavaScript设计的，但是在使用各种JavaScript的预编译语言时(如TypeScript等)时，适用的部分也应尽量遵循本文档的约定。
 
 
-
 ## 2 代码风格
 
-
-
-
-
-
-### 2.1 文件
-
-
+### 2.1 文件编码
 ##### [建议] `JavaScript` 文件使用无 `BOM` 的 `UTF-8` 编码。
 
-解释：
-
-UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。
+解释：UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。
 
 ##### [建议] 在文件结尾处，保留一个空行。
 
 
-
-
 ### 2.2 结构
 
-
-
 #### 2.2.1 缩进
+##### [强制] 使用 `2` 个空格做为一个缩进层级，不允许使用 `4` 个空格 或 `tab` 字符。
 
-
-##### [强制] 使用 `4` 个空格做为一个缩进层级，不允许使用 `2` 个空格 或 `tab` 字符。
-
-
-
-##### [强制] `switch` 下的 `case` 和 `default` 必须增加一个缩进层级。
+解释：使用2个空格可以保证平台的通用性。
 
 示例：
 
 ```javascript
-// good
-switch (variable) {
-
-    case '1':
-        // do...
-        break;
-
-    case '2':
-        // do...
-        break;
-
-    default:
-        // do...
-
+// bad
+if(time) {
+    time = new Date();
 }
 
-// bad
-switch (variable) {
-
-case '1':
-    // do...
-    break;
-
-case '2':
-    // do...
-    break;
-
-default:
-    // do...
-
+// good
+if(time) {
+  time = new Date();
 }
 ```
 
 #### 2.2.2 空格
 
-
-
-##### [强制] 二元运算符两侧必须有一个空格，一元运算符与操作对象之间不允许有空格。
+##### [建议] 二元运算符两侧必须有一个空格，一元运算符与操作对象之间不允许有空格。
 
 示例：
 
@@ -213,7 +106,7 @@ a++;
 a = b + c;
 ```
 
-##### [强制] 用作代码块起始的左花括号 `{` 前必须有一个空格。
+##### [建议] 用作代码块起始的左花括号 `{` 前必须有一个空格。
 
 示例：
 
@@ -239,7 +132,7 @@ function funcName(){
 }
 ```
 
-##### [强制] `if / else / for / while / function / switch / do / try / catch / finally` 关键字后，必须有一个空格。
+##### [建议] `if / else / for / while / function / switch / do / try / catch / finally` 关键字后，必须有一个空格。
 
 示例：
 
@@ -265,7 +158,7 @@ while(condition) {
 })();
 ```
 
-##### [强制] 在对象创建时，属性中的 `:` 之后必须有空格，`:` 之前不允许有空格。
+##### [建议] 在对象创建时，属性中的 `:` 之后必须有空格，`:` 之前不允许有空格。
 
 示例：
 
@@ -285,7 +178,7 @@ var obj = {
 };
 ```
 
-##### [强制] 函数声明、具名函数表达式、函数调用中，函数名和 `(` 之间不允许有空格。
+##### [建议] 函数声明、具名函数表达式、函数调用中，函数名和 `(` 之间不允许有空格。
 
 示例：
 
@@ -430,7 +323,7 @@ var result = number1 + number2 + number3 +
     number4 + number5;
 ```
 
-##### [强制] 在函数声明、函数表达式、函数调用、对象创建、数组创建、for语句等场景中，不允许在 `,` 或 `;` 前换行。
+##### [建议] 在函数声明、函数表达式、函数调用、对象创建、数组创建、for语句等场景中，不允许在 `,` 或 `;` 前换行。
 
 示例：
 
@@ -596,7 +489,7 @@ catch (ex) {
 #### 2.2.4 语句
 
 
-##### [强制] 不得省略语句结束的分号。
+##### [建议] 不得省略语句结束的分号。
 
 ##### [强制] 在 `if / else / for / do / while` 语句中，即使只有一行，也不得省略块 `{...}`。
 
@@ -627,51 +520,11 @@ function funcName() {
 function funcName() {
 };
 
-// 如果是函数表达式，分号是不允许省略的。
-var funcName = function () {
-};
 ```
-
-##### [强制] `IIFE` 必须在函数表达式外添加 `(`，非 `IIFE` 不得在函数表达式外添加 `(`。
-
-解释：
-
-IIFE = Immediately-Invoked Function Expression.
-
-额外的 ( 能够让代码在阅读的一开始就能判断函数是否立即被调用，进而明白接下来代码的用途。而不是一直拖到底部才恍然大悟。
-
-
-示例：
-
-```javascript
-// good
-var task = (function () {
-   // Code
-   return result;
-})();
-
-var func = function () {
-};
-
-
-// bad
-var task = function () {
-    // Code
-    return result;
-}();
-
-var func = (function () {
-});
-```
-
-
-
-
 
 ### 2.3 命名
 
-
-##### [强制] `变量` 使用 `Camel命名法`。
+##### [强制] `变量` 使用 `Camel命名法`(驼峰命名法)。
 
 示例：
 
@@ -706,7 +559,7 @@ function hear(theBells) {
 ```
 
 
-##### [强制] `类` 使用 `Pascal命名法`。
+##### [强制] `类` 使用 `Pascal命名法`(首字符大写)。
 
 示例：
 
@@ -801,25 +654,17 @@ var loadingData = ajax.get('url');
 loadingData.then(callback);
 ```
 
-
-
-
 ### 2.4 注释
 
-
 #### 2.4.1 单行注释
-
 
 ##### [强制] 必须独占一行。`//` 后跟一个空格，缩进与下一行被注释说明的代码一致。
 
 #### 2.4.2 多行注释
 
-
-##### [建议] 避免使用 `/*...*/` 这样的多行注释。有多行注释内容时，使用多个单行注释。
-
+##### [强制] 不允许嵌套`/* */`。
 
 #### 2.4.3 文档化注释
-
 
 ##### [强制] 为了便于代码阅读和自文档化，以下内容必须包含以 `/**...*/` 形式的块注释中。
 
@@ -842,9 +687,7 @@ loadingData.then(callback);
 ##### [建议] 自文档化的文档说明 what，而不是 how。
 
 
-
 #### 2.4.4 类型定义
-
 
 ##### [强制] 类型定义都是以`{`开始, 以`}`结束。
 
@@ -853,7 +696,6 @@ loadingData.then(callback);
 常用类型如：{string}, {number}, {boolean}, {Object}, {Function}, {RegExp}, {Array}, {Date}。
 
 类型不仅局限于内置的类型，也可以是自定义的类型。比如定义了一个类 Developer，就可以使用它来定义一个参数和返回值的类型。
-
 
 ##### [强制] 对于基本类型 {string}, {number}, {boolean}，首字母必须小写。
 
@@ -882,8 +724,7 @@ loadingData.then(callback);
 
 #### 2.4.5 文件注释
 
-
-##### [强制] 文件顶部必须包含文件注释，用 `@file` 标识文件说明。
+##### [建议] 文件顶部必须包含文件注释，用 `@file` 标识文件说明。
 
 示例：
 
@@ -919,7 +760,6 @@ loadingData.then(callback);
 ```
 
 #### 2.4.6 命名空间注释
-
 
 ##### [建议] 命名空间使用 `@namespace` 标识。
 
